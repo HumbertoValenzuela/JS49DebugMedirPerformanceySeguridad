@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotizar Criptomonedas</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="one-half column">
+                <img src="img/cryptomonedas.png">
+            </div>
+            <div class="one-half column">
+                <form id="formulario">
+                    <div class="row">
+                        <label>Elige tu Moneda</label>
+                        <select
+                            class="u-full-width"
+                            id="moneda"
+                            name="moneda"
+                        >
+                                <option value="">Elige tu moneda</option>
+                                <option value="USD">Dolar Estadounidense</option>
+                                <option value="CL">Peso Chileno</option>
+                                <option value="GBP">Libras</option>
+                                <option value="EUR">Euros</option>
+                        </select>
+                    </div>
+
+                    <div class="row">
+                    <div>
+                        <label>Elige tu Criptomoneda</label>
+                        <select 
+                            class="u-full-width"
+                            id="criptomonedas"
+                            name="criptomoneda"
+                        >
+                            <option value="">Elige tu criptomoneda</option>
+                        </select>
+                    </div>
+                    </div>
+                    <input class="button-primary u-full-width" type="submit" value="Cotizar" />
+
+                    <div id="resultado" class="resultado"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+<!--  2. async o defer cual utilizar. -->
+<!-- Podemos pasar unos atributos async y defer -->
+<!-- async: el archivo app.js se carga al final (chrome - network) y  -->
+<!-- notar que el select criptomonedas dejo de funcionar. ¿Porqué?    -->
+<!-- async se carga y se ejecuta inmediatamente una vez que fue   -->
+<!-- descargado. Entonces puede ser que la API aún no reciba la información. Es por eso que no funciona el select -->
+<!-- Cuando existe modificación o scripting en el DOM, no se recomienda -->
+<!-- usar async  -->
+  
+<!-- <script src="js/app.js" async></script> -->
+
+<!--defer: no ejecuta el código del script hasta que el html este listo -->
+<!-- Ver chrome - netWork, notarás que carga más rápido y select-->
+<!-- criptomonedas sigue funcionando -->
+<script src="js/app.js" defer></script>
+    
+</body>
+</html>
